@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+
+{% block title %}Добро пожаловать!{% endblock %}
+
+{% block body %}
+
+
+        <div id="ellipse4"></div>
+        <header class="header_outer">
+            <div class="header_inner responsive_wrapper">
+                <div class="header_logo">
+                    <img src="/static/images/logo.png" />
+                </div>
+                <nav class="header_navigation">
+                    <a href="#">ГЛАВНАЯ</a>
+                    <a href="/about">О НАС</a>
+                    <a href="#">ОТЗЫВЫ</a>
+                    <a href="/contacts">КОНТАКТЫ</a>
+                </nav>
+                <div class="header_number">8 800 000 0 0</div>
+            </div>
+        </header>
+
+        <main>
+            <div id="main_image"></div>
+            <div id="text1">Дотянись до неба на воздушном шаре</div>
+
+            <a href="/feedback"><div id="zayavka_button"><div id="button1_text">Оставить заявку</div></div></a>
+            <div id="plain_text">Разделите уникальное приключение
+                со своими друзьями и близкими,
+                испытав незабываемые эмоции
+                от захватывающих видов
+            </div>
+
+            <a href="/about"><div id="button_more_1"><div id="inner_more_button">Подробнее</div></div></a>
+
+            <img src="static/images/words.png" id="image3">
+        </main>
+
+{% endblock %}

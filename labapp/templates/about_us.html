@@ -1,0 +1,167 @@
+{% extends 'base.html'%}
+
+{% block title %}Записи с БД{% endblock %}
+
+{% block body %}
+
+<!--        <div id="ellipse"></div>-->
+<!--        <div id="ellipse2"></div>-->
+<!--        <div id="ellipse3"></div>-->
+
+        <header class="header_outer">
+            <div class="header_inner responsive_wrapper">
+                <div class="header_logo">
+                    <img src="static/images/logo.png" />
+                </div>
+                <nav class="header_navigation">
+                    <a href="/">ГЛАВНАЯ</a>
+                    <a href="#">О НАС</a>
+                    <a href="#">ОТЗЫВЫ</a>
+                    <a href="/contacts">КОНТАКТЫ</a>
+                </nav>
+                <div class="header_number">8 800 000 0 0</div>
+            </div>
+        </header>
+        <main class="menu_inner responsive_wrapper ">
+            <div id="title1">О НАС</div>
+            <div id="subtitle1">Наш авиационный клуб «33 steps to the sky» профессионально занимается полетами
+                на воздушных шарах с 2010 года. Наши пилоты имеют действующие лицензии пилотов
+                и соответствующий опыт пилотирования, воздушные суда проходят ежегодную сертификацию на состояние летной годности.
+            </div>
+            <div class="rects">
+                <div id="rect1"></div>
+                <div id="rect2"></div>
+                <div id="rect3"></div>
+                <div id="rect4"></div>
+                <div id="rect5"></div>
+            </div>
+
+            <div id="button_more"><div id="inner_more_button">Подробнее</div></div>
+            <img src="static/images/about_us.png" id="image">
+            <div class="faq_7" unique-script-id="w-w-dm-id">
+                <div class="responsive-container-block">
+                  <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-7 wk-ipadp-7 faq-dropdown-bg" id="imiw">
+                    <div class="container-block" id="iwk5t">
+                      <div class="faq">
+                        <span class="faq-question-container">
+                          <p class="text-blk faq-questions">
+                            Какая скорость полета у воздушного шара?
+                          </p>
+                          <img class="openimg" src="static/images/arrow-up.svg">
+                        </span>
+                        <div class="answer-box">
+                          <p class="text-blk faq-answer">
+                            Аэростат перемещается со скоростью ветра. В зависимости от высоты полёта будет меняться и скорость перемещения воздушного шара.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="faq">
+                        <span class="faq-question-container">
+                          <p class="text-blk faq-questions">
+                            А что насчет страховки?
+                          </p>
+                          <img class="openimg" src="static/images/arrow-up.svg">
+                        </span>
+                        <div class="answer-box">
+                          <p class="text-blk faq-answer">
+                            Все пассажиры воздушного шара застрахованы
+на полмиллиона рублей.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="faq">
+                        <span class="faq-question-container">
+                          <p class="text-blk faq-questions">
+                            Что можно взять с собой?
+                          </p>
+                          <img class="openimg" src="static/images/arrow-up.svg">
+                        </span>
+                        <div class="answer-box">
+                          <p class="text-blk faq-answer">
+                            На борт воздушного шара вы можете взять термос с чаем, еду, телефон, фото или видеокамеру, селфи палку и другие небольшие вещи.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="faq">
+                        <span class="faq-question-container">
+                          <p class="text-blk faq-questions">
+                            Какие есть противопоказания?
+                          </p>
+                          <img class="openimg" src="static/images/arrow-up.svg">
+                        </span>
+                        <div class="answer-box">
+                          <p class="text-blk faq-answer">
+                            Лица в состоянии наркотического или алкогольного опьянения к подъему в небо не допускаются. Людям
+с гипертоническими заболеваниями и беременным женщинам также запрещается летать согласно
+технике безопасности.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="faq">
+                        <span class="faq-question-container">
+                          <p class="text-blk faq-questions">
+                            Можно ли брать с собой детей?
+                          </p>
+                          <img class="openimg" src="static/images/arrow-up.svg">
+                        </span>
+                        <div class="answer-box">
+                          <p class="text-blk faq-answer">
+                            Катания по небу будут интересны детям с 6 лет, при условии, если их рост больше 1 метра. Дети могут летать только в сопровождении родителей.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="table_container" >
+                        <table id="table1">
+                          <tr class="table_first_row">
+                            <th class="name_of_deal">Название услуги</th>
+                            <th class="quantity" onclick="sortGrid(document.getElementById('table1'),1, 'number', count);">Максимальное количество человек</th>
+                            <th class="price" onclick="sortGrid(document.getElementById('table1'),2, 'number', count_of_price);">Цена</th>
+                        </tr>
+                          <tr>
+                            <td>Индивидуальный полет</td>
+                            <td>4</td>
+                            <td>6000</td>
+                          </tr>
+                          <tr>
+                            <td>Романтический полет на двоих</td>
+                            <td>2</td>
+                            <td>7000</td>
+                          </tr>
+                          <tr>
+                            <td>Групповой полет</td>
+                            <td>8</td>
+                            <td>8000</td>
+                          </tr>
+
+                        </table>
+
+                      </div>
+                      <script>
+                        let count = 0;
+
+                        document.addEventListener('click', function(event) {
+                        if (event.target.matches('th.quantity')) {
+                        count++;
+                        console.log('Нажато ' + count + ' раз(а)');
+                        }
+                        });
+
+
+
+                        let count_of_price = 0;
+                        document.addEventListener('click', function(event) {
+                        if (event.target.matches('th.price')) {
+                        count_of_price++;
+                        console.log('Нажато ' + count_of_price + ' раз(а)');
+                        }
+                        });
+                      </script>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </main>
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+
+{% block title %}Контакты{% endblock %}
+
+{% block body %}
+<!--        <div id="ellipse"></div>-->
+<!--        <div id="ellipse2"></div>-->
+<!--        <div id="ellipse3"></div>-->
+        <header class="header_outer">
+            <div class="header_inner responsive_wrapper">
+                <div class="header_logo">
+                    <img src="static/images/logo.png" />
+                </div>
+                <nav class="header_navigation">
+                    <a href=".">ГЛАВНАЯ</a>
+                    <a href="/about">О НАС</a>
+                    <a href="#">ОТЗЫВЫ</a>
+                    <a href="#">КОНТАКТЫ</a>
+                </nav>
+                <div class="header_number">8 800 000 0 0</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="contacts_inner responsive_wrapper">
+                <div id="text_contacts">КОНТАКТЫ</div>
+                <div id="line_horizontal_contacts"></div>
+                <div id="line_vertical_contacts"></div>
+                <div class="text_inter_24" id="text_contacts_address">Адрес:</div>
+                <div class="text_inter_20" id="text_contacts_address2">г. Уфа, ул. Менеева 71, оф.31</div>
+                <div class="text_inter_24" id="text_contacts_number">Телефон</div>
+                <div class="text_inter_20" id="text_contacts_number2">8 880 000 00 00</div>
+                <div class="text_inter_24" id="text_contacts_mail">E-mail:</div>
+                <div class="text_inter_20" id="text_contacts_mail2">flyday@gmail.com</div>
+
+                <!--<img src="./images/contacts_1.jpg" alt ="Фотография воздушного шара" title="Воздушный шар">-->
+                <div class="flex_row">
+                    <div class = "content_box object">
+                        <img class="image_contacts object" src="static/images/contacts_1.jpg"  alt ="Фотография воздушного шара 1">
+                    </div>
+                    <div class = "content_box object">
+                        <img class="image_contacts" src="static/images/contacts_2.jpg"  alt ="Фотография воздушного шара 2">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container"> </div>
+        </footer>
+{% endblock %}

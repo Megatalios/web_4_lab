@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block title %}Обратная связь{% endblock %}
+
+{% block body %}
+        
+
+        <header class="header_outer">
+            <div class="header_inner responsive_wrapper">
+                <div class="header_logo">
+                    <img src="static/images/logo.png" />
+                </div>
+                <nav class="header_navigation">
+                    <a href=".">ГЛАВНАЯ</a>
+                    <a href="/about">О НАС</a>
+                    <a href="#">ОТЗЫВЫ</a>
+                    <a href="/contacts">КОНТАКТЫ</a>
+                </nav>
+                <div class="header_number">8 800 000 0 0</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="container2">
+                    <div class="text">
+                       Заявка
+                    </div>
+                    <form id = "form" name = "form">
+                       <div class="form-row" >
+                          <div class="input-data">
+                             <input class="text_inter_24" type="text" placeholder="Имя" id = "name" name = "name" data-reg="^[А-ЯЁ][а-яё]*$"/>
+                             <div class="underline"></div>
+
+                          </div>
+                       </div>
+                       <div class="form-row">
+                          <div class="input-data">
+                             <input class="text_inter_24" type="text" placeholder="E-mail" id = "email" name = "email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"/>
+                             <div class="underline"></div>
+                          </div>
+                       </div>
+                       <div class="form-row">
+                            <div class="input-data">
+                                <input class="text_inter_24" type="text" placeholder="Телефон" id = "phone" name = "phone" data-reg="^((\+7|7|8)+([0-9]){10})$"/>
+                                <div class="underline"></div>
+                            </div>
+                        </div>
+                       <div class="form-row">
+                            <div class="input-data textarea">
+                                <input class="text_inter_24" type="textarea" placeholder="Сообщение" id = "message" name="message"/>
+                                <br />
+                                <div class="underline"></div>
+                                <br />
+
+                            </div>
+                        </div>
+                        <input type="submit" value="Отправить" class="feedback_button" id ="sendbtn">
+
+
+                    </form>
+                </div>
+                <div id="feedback_ellipse"></div>
+                <div id="feedback_oval1"></div>
+                <div id="feedback_oval2"></div>
+                <img class="image_feedback" src="static/images/feedback.jpg" alt ="Фотография воздушных шаров на закате">
+
+            </div>
+        </main>
+        <footer>
+            <div class="container">
+
+            </div>
+        </footer>
+
+        <script type="text/javascript">
+            var sendbtn = document.getElementById("sendbtn");    // выбираем DOM-елемент (кнопку)
+
+            // Привязываем к элементу обработчик события "click"
+            sendbtn.addEventListener("click", function (e) {
+            /* Инструкция preventDefault позволяет переопределить стандартное поведение браузера,
+            если ее убрать, то браузер по-умолчанию обновит страницу после отправки данных формы */
+            e.preventDefault();
+            // Получаем данные полей формы
+            let name = document.getElementsByName("name")[0].value;
+            let mail = document.getElementsByName("email")[0].value;
+            let phone_number = document.getElementsByName("phone")[0].value;
+            let message = document.getElementsByName("message")[0].value;
+
+            // Преобразуем полученные данные в JSON
+            var formdata = JSON.stringify({ name: name, mail: mail, phone_number: phone_number, message: message});
+    
+            // Отправляем запрос через fetch (необходимо выставить соответствующий заголовок (headers)!)
+            fetch("/api/contactrequest",
+            {
+                method: "POST",
+                body: formdata,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then( response => {
+                // fetch в случае успешной отправки возвращает Promise, содержащий response объект (ответ на запрос)
+                // Возвращаем json-объект из response и получаем данные из поля message
+                response.json().then(function(data) {
+                    console.log(data)
+                    //alert(data.message);
+                });
+            })
+            .catch( error => {
+                //alert(error);
+                console.error('error:', error);
+            });
+
+            });
+
+        </script>
+{% endblock %}

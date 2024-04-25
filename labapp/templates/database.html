@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block title %}Добро пожаловать!{% endblock %}
+
+{% block body %}
+        <header class="header_outer">
+            <div class="header_inner responsive_wrapper">
+                <div class="header_logo">
+                    <img src="/static/images/logo.png" />
+                </div>
+                <nav class="header_navigation">
+                    <a href="/">ГЛАВНАЯ</a>
+                    <a href="/about">О НАС</a>
+                    <a href="#">ОТЗЫВЫ</a>
+                    <a href="/contacts">КОНТАКТЫ</a>
+                </nav>
+                <div class="header_number">8 800 000 0 0</div>
+            </div>
+        </header>
+
+        <main>
+            <h1 id="text_db">Все записи с базы данных</h1>
+
+
+            <div class="container" id="database_container">
+                {% for el in clients_ %}
+                <div class="flex-container" id="db_inner">
+                    <h2>Имя: {{ el.name }}</h2>
+                    <p> <b>Эл. адрес: {{ el.mail }}</b></p>
+                    <p> <b>Номер: {{ el.phone_number }}</b></p>
+                    <p> <b>Сообщение: {{ el.message }}</b></p>
+                </div>
+                {% endfor %}
+            </div>
+
+        </main>
+
+{% endblock %}

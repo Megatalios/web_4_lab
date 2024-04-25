@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 23e0fc3b8d9382f22027dc4cc9c1e58108784581 Kamil <kamil.nabyev2003@gmail.com> 1713509043 +0500	commit (initial): 3rd lab version
+23e0fc3b8d9382f22027dc4cc9c1e58108784581 0000000000000000000000000000000000000000 Kamil <kamil.nabyev2003@gmail.com> 1713509120 +0500	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 23e0fc3b8d9382f22027dc4cc9c1e58108784581 Kamil <kamil.nabyev2003@gmail.com> 1713509120 +0500	Branch: renamed refs/heads/master to refs/heads/main
+23e0fc3b8d9382f22027dc4cc9c1e58108784581 efea040299f2e242fbf8465ea991e82600eacc5e Kamil <kamil.nabyev2003@gmail.com> 1713543774 +0500	commit: 4th lab modification
+efea040299f2e242fbf8465ea991e82600eacc5e efea040299f2e242fbf8465ea991e82600eacc5e Kamil <kamil.nabyev2003@gmail.com> 1713637777 +0500	checkout: moving from main to main
+efea040299f2e242fbf8465ea991e82600eacc5e 7db58853f5c90615c4bfdbec5db9bbbd9b398fad Kamil <kamil.nabyev2003@gmail.com> 1713972958 +0500	commit: Комментарии для разбиения на 2 файла

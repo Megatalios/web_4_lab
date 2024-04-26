@@ -53,7 +53,6 @@ def route_get_client_by_name(name: str):
 
 
 @get_app().route('/api/contactrequest', methods=['POST'])
-# Обработка запроса на создание новой записи в БД
 def route_create_client():
     if (
             not request.json

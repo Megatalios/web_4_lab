@@ -34,7 +34,7 @@ def create_client(name: str, mail: str, phone_number: str, message: str):
     ))
     get_db().session.commit()
     client_id = get_db().session.execute(text("SELECT last_insert_rowid()")).scalar()
-    return get_client(id_=client_id)
+    return dict(get_client(id_=client_id))
 
 
 def remove_client_by_id(id_: int):

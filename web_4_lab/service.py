@@ -21,37 +21,22 @@ def get_client_by_name(name: str):
     return {'clients': result}
 
 
-# # Создать новый запрос
-# def create_contact_req(json_data):
-#     try:
-#         # INSERT запрос в БД
-#         db.session.execute(text(f"INSERT INTO clients "
-#                                 f"(name, mail, phone_number, message) "
-#                                 f"VALUES ("
-#                                 f"'{json_data['name']}', "
-#                                 f"'{json_data['mail']}', "
-#                                 f"'{json_data['phone_number']}', "
-#                                 f"'{json_data['message']}')"
-#                                 ))
-#         # Подтверждение изменений в БД
-#         db.session.commit()
-#         # Возвращаем результат
-#         return {'message': "Client Created!"}
-#         # если возникла ошибка запроса в БД
-#     except Exception as e:
-#         # откатываем изменения в БД
-#         db.session.rollback()
-#         # возвращаем dict с ключом 'error' и текcтом ошибки
-#         return {'message': str(e)}
-#
+def create_client(name: str, mail: str, phone_number: str, message: str):
+    get_db().session.execute(text(
+        f"INSERT INTO clients "
+        f"(name, mail, phone_number, message) "
+        f"VALUES ("
+        f"'{name}', "
+        f"'{mail}', "
+        f"'{phone_number}', "
+        f"'{message}'"
+        f")"
+    ))
+    get_db().session.commit()
+    client_id = get_db().session.execute(text("SELECT last_insert_rowid()")).scalar()
+    return get_client(id_=client_id)
 
-# Удалить запрос по id в таблице
-def delete_contact_req_by_id(id):
-    try:
-        # DELETE запрос в БД
-        get_db().session.execute(f"DELETE FROM clients WHERE id = {id}")
-        get_db().session.commit()
-        return {'message': "Client Deleted!"}
-    except Exception as e:
-        db.session.rollback()
-        return {'message': str(e)}
+
+def remove_client_by_id(id_: int):
+    get_db().session.execute(f"DELETE FROM clients WHERE id = {id_}")
+    get_db().session.commit()
